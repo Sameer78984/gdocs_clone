@@ -22,9 +22,18 @@ app.use(
 // Rate limiting
 const limiter = rateLimit({
   windowMs: APP_CONSTANTS.RATE_LIMIT_WINDOW_MS,
-  limit: APP_CONSTANTS.RATE_LIMIT_MAX_REQUESTS,
+  limit: env.NODE_ENV === 'production' ? APP_CONSTANTS.RATE_LIMIT_MAX_REQUESTS : 10000,
   standardHeaders: 'draft-7',
   legacyHeaders: false,
+  skip: (req) => {
+    // Never rate limit health checks
+    if (req.path === '/health' || req.originalUrl === '/api/health') return true;
+    
+    // Skip autosave requests (PATCH /api/documents/:id)
+    if (req.method === 'PATCH' && req.originalUrl.match(/\/api\/documents\/[0-9a-fA-F-]+$/)) return true;
+    
+    return false;
+  }
 });
 app.use('/api', limiter);
 
