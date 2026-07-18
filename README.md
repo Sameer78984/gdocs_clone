@@ -42,7 +42,7 @@ Ensure Docker is installed, then from the root:
 docker compose up --build
 ```
 - Frontend: `http://localhost:3000`
-- Backend API: `http://localhost:4000`
+- Backend API: `http://localhost:5000`
 
 ## Documentation
 - [ARCHITECTURE.md](./ARCHITECTURE.md): System architecture and data flow.
