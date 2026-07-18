@@ -10,7 +10,7 @@ describe('Document Endpoints', () => {
     const res = await request(app).post('/api/auth/register').send({
       email: 'docowner@example.com',
       name: 'Doc Owner',
-      password: 'password123',
+        password: 'Password123!',
     });
     cookie = res.headers['set-cookie'];
     ownerId = res.body.data.user.id;

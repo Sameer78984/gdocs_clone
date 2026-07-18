@@ -12,7 +12,7 @@ describe('Sharing Endpoints', () => {
     const ownerRes = await request(app).post('/api/auth/register').send({
       email: 'owner@example.com',
       name: 'Owner',
-      password: 'password123',
+      password: 'Password123!',
     });
     ownerCookie = ownerRes.headers['set-cookie'];
 
@@ -20,7 +20,7 @@ describe('Sharing Endpoints', () => {
     await request(app).post('/api/auth/register').send({
       email: otherEmail,
       name: 'Other',
-      password: 'password123',
+      password: 'Password123!',
     });
 
     // 3. Create Document

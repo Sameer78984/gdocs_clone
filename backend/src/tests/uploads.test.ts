@@ -11,7 +11,7 @@ describe('Upload Endpoints', () => {
     const res = await request(app).post('/api/auth/register').send({
       email: 'upload@example.com',
       name: 'Uploader',
-      password: 'password123',
+      password: 'Password123!',
     });
     cookie = res.headers['set-cookie'];
   });

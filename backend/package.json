@@ -7,7 +7,7 @@
     "dev": "tsx watch src/app/server.ts",
     "build": "tsc",
     "start": "node dist/app/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:reset": "prisma migrate reset",

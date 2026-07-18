@@ -43,8 +43,8 @@ Please see `docs/screenshots/` for visual references of:
 
 ## Seed Users
 For easy reviewer evaluation, you can log in immediately with:
-- **Alice**: `alice@example.com` / `password123`
-- **Bob**: `bob@example.com` / `password123`
+- **Alice**: `alice@example.com` / `Password123!`
+- **Bob**: `bob@example.com` / `Password123!`
 
 ## Getting Started (Local Development)
 
